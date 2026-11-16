@@ -603,3 +603,8 @@
 #if defined(USE_OSD_CUSTOM_TEXT) && !defined(ENABLE_OSD_CUSTOM_TEXT)
 #define ENABLE_OSD_CUSTOM_TEXT 1
 #endif
+
+// Disable 3x3 soft-iron magnetometer calibration if magnetometer support is not enabled
+#ifndef USE_MAG
+#undef USE_MAG_SOFTIRON
+#endif

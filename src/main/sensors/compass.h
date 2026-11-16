@@ -75,6 +75,9 @@ typedef struct compassConfig_s {
     ioTag_t interruptTag;
     flightDynamicsTrims_t magZero;
     sensorAlignment_t mag_customAlignment;
+#ifdef USE_MAG_SOFTIRON
+    int16_t mag_softiron[9];                // 3x3 soft-iron calibration matrix (scaled by 1000, 1000 = 1.0)
+#endif
 } compassConfig_t;
 
 typedef struct compassBiasEstimator_s {
